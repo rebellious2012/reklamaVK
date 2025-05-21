@@ -1,0 +1,15 @@
+:root {
+    --font-weight-main: 700;
+    --font-weight-second: 500;
+    --font-weight-other: 800;
+    --font-weight-any: 400;
+
+    --color-main: #307eff;
+    --color-second: #67a1ff;
+    --color-text: #fff;
+    --gradient-bg: radial-gradient(50% 50% at 50% 50%, rgb(120, 37, 255) 0%, rgb(102, 21, 233) 100%);
+    --repeat: no-repeat;
+
+    --flex: flex;
+    --center: center;
+}

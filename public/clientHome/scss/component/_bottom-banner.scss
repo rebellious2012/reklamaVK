@@ -1,0 +1,60 @@
+.banner__bottom_section {
+    padding: 140px 0;
+}
+
+.bottom__banner {
+    padding: 108px 142px 88px;
+    background: url('../images/bg/Rectangle-27.svg');
+    background-repeat: $repeat;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+
+    @media(max-width:$brakepoint-lg) {
+        padding: 108px 40px 241px;
+
+    }
+
+    @media(max-width:$brakepoint-md) {}
+
+    @media(max-width:$brakepoint-sm) {
+        // background-size: 100vw, cover;
+    }
+
+}
+
+.bottom__banner__img__box {
+    position: absolute;
+    bottom: -4px;
+    right: 0;
+    z-index: 0;
+
+    @media(max-width:$brakepoint-sm) {
+        bottom: 0;
+        left: 50%;
+        transform: translate(-50%, -33%) scale(1.7);
+    }
+}
+
+.bottom__banner__content {
+    position: relative;
+    z-index: 1;
+}
+
+.bottom__banner__title {
+    text-align: start;
+    font-size: 3.125rem;
+    line-height: 120%;
+    color: $color-text;
+    max-width: 44%;
+
+    @media(max-width:$brakepoint-lg) {
+        text-align: center;
+        max-width: 90%;
+        margin: 0 auto;
+    }
+
+    @media(max-width:$brakepoint-md) {
+        font-size: 2.14285rem;
+    }
+}

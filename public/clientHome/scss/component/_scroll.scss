@@ -1,0 +1,13 @@
+.page-scroll-box {
+    width: 58px;
+    height: 58px;
+    border-radius: 50px;
+    background:
+        url('../images/arrow-scroll-up.svg'),
+        radial-gradient(60.91% 58.88% at 50% 50%, rgb(144, 186, 255) 0%, rgb(103, 161, 255) 100%);
+    background-repeat: $repeat;
+    background-position: $center;
+    position: fixed;
+    right: 3%;
+    bottom: 10%;
+}

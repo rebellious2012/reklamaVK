@@ -1,0 +1,64 @@
+@import "../common/extends";
+
+.tools__row {
+    margin-top: 55px;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.tools__row-social {
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.tools__icon__box {
+    margin: 0 auto;
+    width: 200px;
+    height: 200px;
+}
+
+.tools__desc {
+    font-size: 1.5625rem;
+    font-weight: $font-weight-any;
+    margin: 36px 0 0 0;
+    padding: 0 10px;
+}
+
+.tools__desc strong {
+    font-weight: 700;
+}
+
+.tools__card {
+    border: 2px solid $color-second;
+    padding: 22px;
+    font-size: 0;
+    aspect-ratio: 1 / 1;
+
+    @extend %flex-center;
+}
+
+@media (max-width: $brakepoint-md) {
+    .tools__row {
+        grid-template-columns: repeat(1, 1fr);
+        width: 80%;
+        margin: 40px auto 0;
+    }
+
+    .tools__row-social {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: $brakepoint-sm) {
+    .tools__row {
+        width: 100%;
+    }
+    .tools__row-social {
+        gap: 15px;
+    }
+    .tools__card {
+        border-radius: 21px;
+    }
+    .tools__icon__box {
+        width: 170px;
+        height: 170px;
+    }
+}

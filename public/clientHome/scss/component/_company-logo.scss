@@ -1,0 +1,25 @@
+.company {
+    display: $flex;
+    align-items: $center;
+    gap: 10px;
+}
+
+.company__logo__box {
+    width: 51px;
+    height: 51px;
+}
+
+.company__name {
+    font-size: 1.25rem;
+    font-family: 'Unbounded', sans-serif;
+}
+
+@media(max-width:$brakepoint-sm) {
+    .company__name {
+        font-size: 0.84rem;
+    }
+    .company__logo__box {
+        width: 30px;
+        height: 30px;
+    }
+}

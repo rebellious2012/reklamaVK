@@ -1,0 +1,92 @@
+.about__section {
+    padding: 100px 0 0 0;
+}
+
+.card__about {
+    border-radius: 40px;
+    color: $color-text;
+    padding: 60px 80px;
+    display: flex;
+}
+
+.about__item__1 {
+    width: 43%;
+}
+
+.about__item__2 {
+    width: 57%;
+}
+
+.about__content * {
+    margin: 0;
+}
+
+.about__content>*+* {
+    margin-top: 20px;
+}
+
+
+
+.about__content {
+    max-width: 180px;
+}
+
+.about__title {
+    font-size: 3.125rem;
+}
+
+.about__description {
+    font-size: 1.25rem;
+    line-height: 125%;
+}
+
+.ticker-bg {
+    background: url('../images/ticker.webp'), $gradient-bg;
+    background-size: cover;
+    background-repeat: $repeat;
+    background-position-x: 40%;
+    justify-content: end;
+}
+
+.dummy {
+    background-image: url('../images/dummy-2.webp'), url('../images/dummy-3.webp'), $gradient-bg;
+    background-position-x: 85%;
+    background-size: cover;
+    background-repeat: $repeat;
+}
+
+.exercise {
+    background-image: url('../images/exercise-1.webp'), url('../images/exercise-2.webp'), $gradient-bg;
+    background-position-x: 90%;
+    background-size: cover;
+    background-repeat: $repeat;
+}
+
+.dollar {
+    background-image: url('../images/dollar.webp'), $gradient-bg;
+    background-position-x: 60%;
+    background-size: cover;
+    background-repeat: $repeat;
+}
+
+@media (max-width: $brakepoint-lg) {
+
+    .about__item__1,
+    .about__item__2 {
+        width: 50%;
+    }
+}
+
+@media (max-width: $brakepoint-md) {
+
+    .about__item__1,
+    .about__item__2 {
+        width: 100%;
+    }
+}
+
+@media (max-width: $brakepoint-sm) {
+    .about__section {
+        padding: 60px 0 0 0;
+    }
+}

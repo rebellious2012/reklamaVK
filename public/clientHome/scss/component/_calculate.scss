@@ -1,0 +1,203 @@
+.calc__row {
+    padding: 55px 0 0 0;
+}
+
+.calc__item-X {
+    width: 40.48%;
+}
+
+.calc__item-XL {
+    width: 59.52%;
+}
+
+.calc__card {
+    display: $flex;
+    align-items: $center;
+    text-align: start;
+    justify-content: space-between;
+    padding: 20px;
+    height: 100%;
+}
+
+.card-income {
+    background: linear-gradient(180deg, #f5f3fe 0%, #fff 100%);
+}
+
+.card-profit {
+    background: linear-gradient(180deg, #fffbed 0%, #fff 100%);
+}
+
+.card__box__image {
+    display: $flex;
+    align-items: $center;
+    justify-content: $center;
+    flex-basis: 40%;
+}
+
+.calc__card__textcontent>* {
+    margin: 0;
+}
+
+.calc__card__textcontent {
+    flex: 0 1 55%;
+}
+
+.calc__card__textcontent>*+* {
+    margin-top: 15px;
+}
+
+.calc__card__nums {
+    font-size: 2.5rem;
+}
+
+.calc__card__desc {
+    font-size: 1.25rem;
+    font-weight: $font-weight-second;
+}
+
+.card-progress {
+    background: #f5f3fe;
+    padding: 53px 40px;
+
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+
+.card__progress__content {
+    width: 100%;
+}
+
+.card__progress__content {
+    p {
+        display: $flex;
+        justify-content: space-between;
+        align-items: flex-end;
+    }
+
+}
+
+.progress__content__desc {
+    font-size: 1.25rem;
+}
+
+.progress__content__numb {
+    font-size: 1.875rem;
+}
+
+.progress__content__numb-XL {
+    font-size: 3.125rem;
+    margin-top: 30px;
+}
+
+.progress {
+    max-width: 100%;
+    margin-top: 30px;
+}
+
+.progress__line-bg {
+    width: 100%;
+    height: 6px;
+    border-radius: 30px;
+    background-color: #E7EAF5;
+}
+
+.progress__line {
+    height: 100%;
+    background-color: $color-main;
+    border-radius: 100px;
+    color: #ffffff;
+}
+
+.progress__line-proposal {
+    width: 30%;
+    position: relative;
+}
+
+.progress__line-proposal::after {
+    content: url('../images/Ellipse-17.svg');
+    position: absolute;
+    right: -16px;
+    top: -8px;
+}
+
+.progress__line-publicity {
+    width: 15%;
+    position: relative;
+}
+
+.progress__line-publicity::after {
+    content: url('../images/Ellipse-17.svg');
+    position: absolute;
+    right: -16px;
+    top: -8px;
+}
+
+
+@media (max-width: $brakepoint-md) {
+    .calc__row {
+        flex-direction: column;
+        align-items: $center;
+    }
+
+    .calc__item-X,
+    .calc__item-XL {
+        width: 80%;
+    }
+    .card-progress {
+        gap: 30px;
+    }
+}
+
+@media (max-width: $brakepoint-sm) {
+    .calc__row {
+        padding: 32px 0 0 0;
+    }
+
+    .calc__card {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 25px;
+        font-size: 1.4285rem;
+    }
+
+    .calc__item-X,
+    .calc__item-XL {
+        width: 100%;
+    }
+
+    .card__box__image {
+        max-width: 50%;
+    }
+
+    .calc__card__nums {
+        font-size: 2.857rem;
+    }
+
+    .calc__card__desc {
+        font-size: 1.4286rem;
+    }
+
+    .progress__content__desc {
+        font-size: 1.4286rem;
+    }
+
+    .card-progress {
+        padding: 60px 20px;
+    }
+
+    .card__progress__content {
+        p {
+            align-items: flex-start;
+            flex-direction: column;
+            gap: 15px;
+            font-size: 1.4286rem;
+        }
+        span {
+            font-size: 1.4286rem;
+        }
+    }
+    .progress__content__numb-XL {
+        font-size: 2.1428rem;
+    }
+}

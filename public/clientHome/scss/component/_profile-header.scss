@@ -1,0 +1,150 @@
+@import "../common/extends";
+
+.profile-header {
+    background: linear-gradient(152deg, #90baff 0%, #67a1ff 100%);
+    color: $color-text;
+    padding: 40px 0 30px 0;
+}
+
+.profile__container {
+    max-width: 1480px;
+    padding: 0 20px 70px;
+    margin: 0 auto;
+}
+
+.profile-header__container {
+    max-width: 1410px;
+    margin: 0 0 0 auto;
+}
+
+.user-nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+
+
+.user-nav__list {
+    @extend %flex-center;
+    flex-wrap: wrap;
+    gap: 5px;
+    margin: 0 10px 0 auto;
+}
+
+// .user-nav__list__item {}
+
+.nav__list__item__link {
+    display: $flex;
+    align-items: $center;
+    gap: 10px;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 40px;
+}
+
+.nav__list__item__link.active {
+    background-color: #92bbffd4;
+}
+
+.nav-bell-box {
+    margin-right: 20px;
+
+    & svg.notification circle {
+        fill: rgb(102, 21, 233);
+    }
+}
+
+.nav-user-box {
+    display: $flex;
+    align-items: $center;
+    gap: 10px;
+}
+
+.user-avatar-box {
+    @extend %flex-center;
+
+    width: 44px;
+    height: 44px;
+    border-radius: 50px;
+    background-color: #fff;
+    overflow: hidden;
+    flex: 0 0 44px;
+}
+
+.nav-user-select {
+    outline: none;
+    background-color: transparent;
+    border: none;
+    color: inherit;
+    font-weight: inherit;
+    max-width: 160px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.nav-user-select::-ms-expand {
+    display: none;
+}
+
+// .user__select {
+//     color: inherit;
+//     font-weight: inherit;
+//     max-width: 160px;
+//     white-space: nowrap;
+//     text-overflow: ellipsis;
+// }
+
+// .user__select-selected {}
+
+// .user__select__list {}
+
+// .select__list__item {}
+
+.header-other-menu {
+    display: $flex;
+    align-items: $center;
+    justify-content: space-between;
+    margin-top: 30px;
+}
+
+.add-task-btn {
+    background: $gradient-bg;
+    border: none;
+    color: $color-text;
+    font-weight: $font-weight-main;
+    text-align: $center;
+    line-height: 50px;
+    padding: 0 10px;
+    font-size: 1rem;
+    flex: 0 1 19%;
+    text-wrap: nowrap;
+
+    span::after {
+        content: url('../../images/add.svg');
+        margin-left: 10px;
+        position: relative;
+        bottom: -5px;
+    }
+}
+
+.count__box {
+    background: $gradient-bg;
+    color: $color-text;
+    text-align: $center;
+    line-height: 50px;
+    padding: 0 10px;
+    font-size: 1rem;
+    font-weight: 500;
+    flex: 0 1 10%;
+    text-wrap: nowrap;
+
+}
+
+.count::before {
+    content: url('../../images/coins.svg');
+    position: relative;
+    left: -10px;
+    top: 5px;
+}

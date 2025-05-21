@@ -1,0 +1,27 @@
+@import "../common/extends";
+
+.modal {
+    display: none;
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+    backdrop-filter: blur(100px);
+}
+
+.modal-open {
+    @extend %flex-center;
+
+    position: fixed;
+    z-index: 4;
+    top: 0;
+    right: 0;
+}
+
+
+
+.modal__close {
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    cursor: pointer;
+}

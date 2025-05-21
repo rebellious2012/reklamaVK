@@ -1,0 +1,32 @@
+@import "./common/normalize";
+@import "./common/font";
+@import "./common/vars";
+@import "./common/base";
+
+@import "./component/main-container";
+@import "./component/profile-header";
+@import "./component/company-logo";
+@import "./component/profile-main";
+@import "./component/profile-content";
+@import "./component/sidebar";
+@import "./component/security-info";
+@import "./component/form";
+
+
+@import "./component/main-modal";
+@import "./component/custom-datalist";
+@import "./component/security-data";
+@import "./component/security-loader";
+
+// swiper
+@import "./component/security-swiper";
+@import "./component/profile-info";
+@import "./component/card-check";
+
+
+
+@import "./component/main-footer";
+@import "./component/profile-footer";
+@import "./component/chat";
+@import "./component/modal-pay";
+

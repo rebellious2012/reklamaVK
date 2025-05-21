@@ -1,0 +1,69 @@
+
+
+.sidebar {
+    flex: 0 0 338px;
+    padding-left: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.aside__list,
+.aside__box__help {
+    background-color: #fff;
+    height: auto;
+    padding: 5px 0;
+    text-align: start;
+
+}
+
+.aside__box__help {
+    padding: 20px 30px;
+    text-align: center;
+}
+
+.aside__box__help>*+* {
+    margin-top: 30px;
+}
+
+.aside__list__item {
+    padding: 15px 30px;
+    border-bottom: 1px solid #F2F2F2;
+}
+
+.aside__list__item:last-child {
+    border: none
+}
+
+.aside__item__link {
+    display: $flex;
+    align-items: $center;
+    justify-content: flex-start;
+    gap: 20px;
+}
+
+.aside__item__title {
+    font-size: 1.25rem;
+    font-weight: 500;
+}
+
+.aside__list__icon__box {
+    width: 36px;
+    height: 36px;
+}
+
+// .aside__list__icon {}
+
+.help__title {
+    font-size: 1.25rem;
+}
+
+.help__btn {
+    border-radius: 10px;
+    color: $color-text;
+    background: $gradient-btn;
+    line-height: 50px;
+    width: 100%;
+    font-weight: $font-weight-main;
+    margin-top: 30px;
+}

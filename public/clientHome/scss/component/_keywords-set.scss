@@ -1,0 +1,59 @@
+.keywords__settings__block {
+    margin-top: 30px;
+
+    &>*+* {
+        margin-top: 50px;
+    }
+
+    & .btn {
+        margin-top: 50px;
+        padding: 0 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 20px;
+        max-width: 40%;
+    }
+}
+
+.btn-request span::after {
+    content: url('../images/plus.png');
+    display: inline-block;
+    vertical-align: -webkit-baseline-middle;
+    margin-left: 10px;
+}
+
+.btn__block {
+    width: 19px;
+    height: 19px;
+}
+
+
+
+.profile__title-XL {
+    font-size: 1.5625rem;
+}
+
+.keywords__settings__nums {
+    border-radius: 100px;
+    background: $gradient-btn;
+    margin-top: 20px;
+    padding: 7px 20px;
+    color: #fff;
+    @extend %flex-center;
+    gap: 10px;
+    font-weight: 700;
+    font-size: 1rem;
+    line-height: 24px;
+    width: fit-content;
+    min-width: 180px;
+    &-auditories {
+        background: $gradient-bg;
+    }
+}
+
+.keywords__settings__icon {
+    font-size: 0;
+    width: 24px;
+    height: 24px;
+}

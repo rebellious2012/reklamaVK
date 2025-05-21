@@ -1,0 +1,188 @@
+// base
+* {
+    transition: 0.3s;
+    box-sizing: border-box;
+    margin: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body,
+html {
+    overflow-x: hidden;
+    font-family: 'Geometria', sans-serif;
+    font-weight: $font-weight-main;
+    font-size: 16px;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    -o-object-fit: cover;
+    object-fit: cover;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul,
+li {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+// label {font-size: 0;}
+.company__name {
+    font-size: 1.25rem;
+    font-family: 'Unbounded', sans-serif;
+}
+
+.btn {
+    border-radius: 100px;
+    border: none;
+    cursor: pointer;
+}
+.btn__payment {
+    border-radius: 10px;
+    color: #fff;
+    line-height: 50px;
+    font-weight: 700;
+}
+.btn__payment-cancel {  
+    background: $gradient-btn-warning;
+}
+.btn__payment-success {
+    background: $gradient-btn;
+}
+.main__btn {
+    border: none;
+    border-radius: 100px;
+    font-size: 1.5625rem;
+    max-width: 320px;
+    line-height: 204%;
+    padding: 17px 20px;
+
+    display: flex;
+    align-items: $center;
+    justify-content: $center;
+    gap: 10px;
+
+    margin: 50px 0 0 0;
+}
+
+.main__btn-grad {
+    background: $gradient-bg;
+    color: $color-text;
+    transition: all 0.8s;
+
+    &:hover {
+        background: radial-gradient(50% 50% at 50% 50%, rgb(120, 37, 255) 200%, rgb(102, 21, 233) 100%);
+    }
+}
+
+.main__btn__arrow {
+    vertical-align: middle;
+}
+
+.card {
+    border-radius: 40px;
+    text-align: $center;
+}
+
+.item {
+    padding: 15px;
+}
+
+.main__item {
+    width: calc(100% / 4);
+}
+
+.second__item {
+    width: calc(100% / 3);
+}
+
+.section {
+    padding: 140px 0 0;
+}
+
+.section__logo__box {
+    background: url('../images/section-logo-box.svg');
+    background-repeat: $repeat;
+    margin: 0 auto;
+    width: 106px;
+    height: 106px;
+    border-radius: 30px;
+    display: $flex;
+    align-items: $center;
+    justify-content: $center;
+}
+
+.subtitle {
+    font-size: 2.5rem;
+    text-align: $center;
+    margin: 40px auto 0;
+    max-width: 50%;
+}
+
+.flex {
+    margin-left: -15px;
+    margin-right: -15px;
+
+    display: $flex;
+    flex-wrap: wrap;
+}
+
+.grid {
+    display: grid;
+    gap: 30px;
+}
+
+@media (max-width: $brakepoint-md) {
+
+    body,
+    html {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: $brakepoint-sm) {
+    .section {
+        padding: 60px 0 0;
+    }
+
+    .section__logo__box {
+        width: 66px;
+        height: 66px;
+    }
+
+    .subtitle {
+        font-size: 1.875rem;
+    }
+
+    .item {
+        padding: 10px;
+    }
+
+    .main__btn {
+        padding: 10px 20px;
+    }
+
+    .section__logo__box {
+        background-size: cover;
+        border-radius: 18px;
+
+        img {
+            max-width: 48%;
+        }
+    }
+}
+.swiper {
+    flex: 1 1 705px;
+}
+.bold {
+    font-weight: 700;
+}

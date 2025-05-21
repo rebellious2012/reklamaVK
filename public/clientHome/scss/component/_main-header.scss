@@ -1,0 +1,44 @@
+.header {
+    position: absolute;
+    top: 20px;
+    z-index: 1;
+    width: 100%;
+}
+
+.nav {
+    background-color: #fff;
+    display: $flex;
+    justify-content: space-between;
+    align-items: $center;
+}
+
+.header__nav {
+    border-radius: 30px;
+    padding: 15px 30px;
+}
+
+.btn.btn__signin {
+    width: 140px;
+    text-align: $center;
+    background-color: #fff;
+    font-weight: 700;
+    border: 2px solid $color-second;
+
+    padding: 19px 0;
+    cursor: pointer;
+}
+
+@media(max-width:$brakepoint-sm) {
+    .btn.btn__signin {
+        font-size: 0.85714rem;
+    }
+
+    .header__nav {
+        border-radius: 100px;
+        padding: 7px 14px;
+    }
+
+    .btn.btn__signin {
+        width: 105px;
+    }
+}

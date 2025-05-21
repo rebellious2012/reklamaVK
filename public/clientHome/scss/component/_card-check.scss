@@ -1,0 +1,49 @@
+.card__check {
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    .security__data__control {
+        display: none;
+    }
+
+    .card__title {
+        margin-top: 20px;
+    }
+}
+
+.card__check__imagebox {
+    width: 70px;
+    height: 70px;
+}
+
+
+.card__check__title {
+    font-size: 2.5rem;
+    margin-top: 50px;
+}
+.card__check__imagebox__checked {
+    height: 90px;
+    width: 100%;
+    margin-top: 30px;
+
+    position: relative;
+
+    .card__check__imagebox__checked__content {
+        @extend %absolute-center;
+        z-index: 3;
+    }
+}
+
+.group {
+    flex: 0 1 705px;
+    height: fit-content;
+
+    .btn {
+        width: 60%;
+    }
+}
+
+.group-checked {
+    display: none;
+}

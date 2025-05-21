@@ -1,0 +1,47 @@
+.banner__bottom {
+    padding: 175px 0;
+    margin-top: 70px;
+    background: url('../images/bottom-bg.svg');
+    // background-size: cover;
+    background-repeat: $repeat;
+    background-position-x: $center;
+    height: auto;
+
+    position: relative;
+}
+
+.banner__bottom .banner__title {
+    font-size: 2.5rem;
+    font-weight: $font-weight-any;
+    line-height: 125%;
+}
+
+.banner__title h3 {
+    font-weight: 700;
+}
+
+.box__scroll-bottom {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, 0);
+    top: 0;
+
+}
+
+.banner__bottom .banner__content {
+    flex-direction: row-reverse;
+}
+
+@media (max-width: $brakepoint-lg) {
+    .banner__bottom .banner__content {
+        flex-direction: column;
+    }
+
+    .banner__bottom .banner__title {
+        font-size: 1.875rem;
+        text-align: center;
+    }
+    .main__btn-color {
+        margin: 50px auto;
+    }
+}

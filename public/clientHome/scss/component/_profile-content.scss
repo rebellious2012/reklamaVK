@@ -1,0 +1,79 @@
+.main__content__link {
+    &:visited {
+        opacity: 0.4;
+    }
+}
+
+.profile__main__content {
+    grid-template-columns: repeat(3, 1fr);
+}
+.profile__content__card {
+    background-color: #fff;
+    height: 100%;
+
+    padding: 31px 10px 50px;
+    position: relative;
+
+    &:hover {
+        box-shadow: 0 20px 50px 0 rgba(125, 175, 255, 0.24);
+    }
+
+}
+
+.profile__card__title {
+    font-size: 1.25rem;
+    font-weight: 500;
+    margin-top: 20px;
+
+}
+
+.profile__card__desc {
+    font-size: 1rem;
+    font-weight: 400;
+    color: #727272;
+    line-height: 21px;
+    margin-top: 15px;
+}
+
+.profile__card__num {
+    width: 84px;
+    color: $color-text;
+    font-size: 0.75rem;
+    line-height: 21px;
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translate(-50%, 0);
+}
+
+.profile__card__num-1 {
+    background-color: #67A1FF;
+}
+
+.profile__card__num-2 {
+    background-color: #FAD202;
+}
+
+.profile__card__num-3 {
+    background-color: #6C1DED;
+}
+
+.profile__card__num-4 {
+    background-color: #5EC221;
+}
+
+.profile__card__num-5 {
+    background-color: #FF7070;
+}
+
+@media (max-width: $brakepoint-lg) {
+    .profile__main__content {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: $brakepoint-md) {
+    .profile__main__content {
+        grid-template-columns: repeat(1, 1fr);
+    }
+}

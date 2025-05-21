@@ -1,0 +1,68 @@
+@font-face {
+    font-family: 'Unbounded', sans-serif;
+    src: url('../fonts/Unbounded-Bold.woff2') format("woff2"),
+        url('../fonts/Unbounded-Bold.woff') format("woff");
+    font-style: normal;
+    font-weight: 700;
+}
+
+@font-face {
+    font-family: 'Geometria';
+    src: local('../fonts/Geometria Regular'), local('Geometria-Regular'),
+        url('../fonts/Geometria-Regular.woff2') format('woff2'),
+        url('../fonts/Geometria-Regular.woff') format('woff'),
+        url('../fonts/Geometria-Regular.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/Geometria-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Geometria';
+    src: local('../fonts/Geometria Medium'), local('Geometria-Medium'),
+        url('../fonts/Geometria-Medium.woff2') format('woff2'),
+        url('../fonts/Geometria-Medium.woff') format('woff'),
+        url('../fonts/Geometria-Medium.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/Geometria-Medium.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Geometria';
+    src: local('../fonts/Geometria Bold'), local('Geometria-Bold'),
+        url('../fonts/Geometria-Bold.woff2') format('woff2'),
+        url('../fonts/Geometria-Bold.woff') format('woff'),
+        url('../fonts/Geometria-Bold.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/Geometria-Bold.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+
+@font-face {
+    font-family: 'Geometria';
+    src: local('../fonts/Geometria ExtraBold'), local('Geometria-ExtraBold'),
+        url('../fonts/Geometria-ExtraBold.woff2') format('woff2'),
+        url('../fonts/Geometria-ExtraBold.woff') format('woff'),
+        url('../fonts/Geometria-ExtraBold.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/Geometria-ExtraBold.ttf') format('truetype');
+    font-weight: 800;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Unbounded';
+    src: local('../fonts/Unbounded Bold'), local('Unbounded-Bold'),
+        url('../fonts/Unbounded-Bold.woff2') format('woff2'),
+        url('../fonts/Unbounded-Bold.woff') format('woff'),
+        url('../fonts/Unbounded-Bold.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/Unbounded-Bold.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
