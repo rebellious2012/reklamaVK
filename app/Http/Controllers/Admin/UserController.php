@@ -121,17 +121,16 @@ class UserController extends Controller
             })
         ->get();
 
-       // dd(Stage::with('steps')->first()->steps->where('id', 12)->first());
-
         // Получаем этапы, которые уже назначены пользователю
-        $assignedStages = $user->stages()->with('steps')->get();
+        // $assignedStages = $user->stages()->with('steps')->get();
+        $assignedStages = $user->stages()
+        ->with('steps')
+        ->withPivot(['account_number', 'payment_purpose', 'bank_name'])
+        ->get();
 
         $assignedSteps = Step::whereHas('users', function ($query) use ($user) {
             $query->where('user_id', $user->id);
         })->get();
-
-//        dd($assignedStages->first()->steps->last());
-      //  dd($assignedSteps);
 
         $hasActiveStage = $assignedStages->contains(function ($stage) {
             return $stage->pivot->status === 'active';
@@ -173,7 +172,6 @@ class UserController extends Controller
      */
     public function update(Request $request, User $user): \Illuminate\Http\RedirectResponse
     {
-        //dd($request);
         $validatedData = $request->validate([
             'name'            => 'required|string|max:255',
             'email'           => 'required|string|email|max:255|unique:users,email,' . $user->id,
@@ -186,15 +184,14 @@ class UserController extends Controller
             'stage_prices.*'  => 'nullable|numeric|min:0',
             'stage_account_numbers' => 'nullable',
             'stage_bank_names' => 'nullable',
+            'stage_payment_purpose' => 'nullable|string|max:255',
             'steps.*'         => 'nullable|array',
             'steps.*.*'       => 'nullable|integer|exists:steps,id',
             'stages.*.status' => 'nullable|string|in:active,completed,pending',  // Валидация статусов
         ]);
-
         $user->update($validatedData);
         // Обновляем роли пользователя
         $user->roles()->sync($validatedData['role']);
-
         // Обновляем или создаем запись в таблице accounts
         $user->account()->updateOrCreate(
             ['user_id' => $user->id],  // Условие для поиска или создания записи
@@ -205,27 +202,23 @@ class UserController extends Controller
                 'additional_info' => $validatedData['additional_info'] ?? '',
             ]
         );
-
         if ($request->has('stage_prices')) {
             foreach ($request->input('stage_prices') as $stageId => $price) {
                 // Получаем статус для этапа
                 $status = $request->input("stages.{$stageId}.status", 'pending');  // Значение по умолчанию 'pending'
                 $bank_name = $request->input('stage_bank_names');
                 $account_number = $request->input('stage_account_numbers');
+                $payment_purpose = $request->input('stage_payment_purpose');
                 // Сохраняем стоимость этапа, шаги и статус
-                $user->stages()->syncWithoutDetaching([$stageId => ['price' => $price, 'status' => $status, 'bank_name' => $bank_name, 'account_number' => $account_number]]);
-
+                $user->stages()->syncWithoutDetaching([$stageId => ['price' => $price, 'status' => $status, 'bank_name' => $bank_name, 'account_number' => $account_number, 'payment_purpose' => $payment_purpose]]);
                 if ($request->has("steps.{$stageId}")) {
                     $steps = $request->input("steps.{$stageId}");
-
                     // Найдем текущий активный шаг пользователя
                     $activeStep = $user->steps()->wherePivot('status', 'active')->first();
-
                     if ($activeStep) {
                         // Обновим его статус на 'completed'
                         $user->steps()->updateExistingPivot($activeStep->id, ['status' => 'completed']);
                     }
-
                     // Теперь добавляем новый шаг с активным статусом
                     foreach ($steps as $stepId) {
                         $user->steps()->syncWithoutDetaching([
@@ -233,47 +226,8 @@ class UserController extends Controller
                         ]);
                     }
                 }
-
-
-//                if ($request->has("steps.{$stageId}")) {
-//                    $steps = $request->input("steps.{$stageId}");
-//
-//                    // Здесь мы синхронизируем шаги с пользователем
-//                    $user->steps()->syncWithoutDetaching($steps);
-//                }
             }
         }
-
-
-        // Обработка этапов и шагов
-//        if ($request->has('stage_prices')) {
-//            foreach ($request->input('stage_prices') as $stageId => $price) {
-//                // Получаем статус для этапа
-//                $status = $request->input("stages.{$stageId}.status", 'pending');  // Значение по умолчанию 'pending'
-//
-//                // Сохраняем стоимость этапа, шаги и статус
-//                $user->stages()->syncWithoutDetaching([$stageId => ['price' => $price, 'status' => $status]]);
-//
-//                if ($request->has("steps.{$stageId}")) {
-//                    $steps = $request->input("steps.{$stageId}");
-//                    $user->steps()->sync($steps);
-//                }
-//            }
-//        }
-
-        // Обработка этапов и шагов
-//        if ($request->has('stage_prices')) {
-//            foreach ($request->input('stage_prices') as $stageId => $price) {
-//                // Сохранение стоимости этапа и шагов
-//                $user->stages()->syncWithoutDetaching([$stageId => ['price' => $price]]);
-//
-//                if ($request->has('steps.' . $stageId)) {
-//                    $steps = $request->input('steps.' . $stageId);
-//                    $user->steps()->sync($steps);
-//                }
-//            }
-//        }
-
         return redirect()->back()->with('success', 'Користувач успішно оновлений');
     }
 

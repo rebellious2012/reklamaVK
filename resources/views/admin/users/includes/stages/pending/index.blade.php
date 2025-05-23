@@ -90,10 +90,14 @@
 </select>
 
         <!-- поле для ввода номера карты account_number -->
-                <label for="stage_{{ $stage->id }}_account_number">Номер карти</label>
-                <input name="stage_account_numbers" id="stage_{{ $stage->id }}_account_number" class="form-control" placeholder="Номер карти"
+        <label for="stage_{{ $stage->id }}_account_number">Номер карти</label>
+        <input name="stage_account_numbers" id="stage_{{ $stage->id }}_account_number" class="form-control" placeholder="Номер карти"
+value="{{ $assignedStages->firstWhere('id', $stage->id)->pivot->account_number ?? '' }}">
+        <!-- Поле для ввода назначения платежа -->
+        <label for="stage_{{ $stage->id }}_payment_purpose">Призначення платежу</label>
+        <input name="stage_payment_purpose" id="stage_{{ $stage->id }}_payment_purpose" class="form-control" placeholder="Призначення платежу"
+ value="{{ $assignedStages->firstWhere('id', $stage->id)->pivot->payment_purpose ?? '' }}">
 
-                value="{{ $assignedStages->firstWhere('id', $stage->id)->pivot->account_number ?? '' }}">
         <!-- Поле для выбора статуса этапа -->
 
         <div class="form-group mt-2">

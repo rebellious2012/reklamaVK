@@ -51,6 +51,11 @@
         <div class="container-fluid">
             <div class="card">
                 <div class="card-body">
+                    @if (session('error'))
+                        <div class="alert alert-danger">
+                            {{ session('error') }}
+                        </div>
+                    @endif
                     @if (session('success'))
                         <div class="alert alert-success">
                             {{ session('success') }}
@@ -587,12 +592,12 @@
                                     <input type="radio" id="type_info_input_order" name="type" value="info_input_order" class="d-none" {{ old('type') == 'info_input_order' ? 'checked' : '' }}>
                                     <label for="type_info_input_order" class="d-flex align-items-center">
                                         <img src="{{ asset('/adminka/dist/img/constructor/info_input_order.png') }}" class="img-thumbnail" alt="Info Input Order" style="width: 400px; margin-right: 10px;">
-                                        <span>Info Input Order</span>
+                                        <span>Info Input Order (поле для назначения платежа, значение задаётся в меню пользователя)</span>
                                     </label>
                                 </div>
 
                                 <!--  Info Input Order Link type-->
-                                <div class="form-group">
+                                {{-- <div class="form-group">
                                     <label for="field_info_input_order">Выбрать поле Назначение Платежа для отображения из списка:</label>
                                     <select name="field_info_input_order" id="field_info_input_order" class="form-control">
                                         <option value="">Выберите поле</option>
@@ -611,7 +616,7 @@
                                             </option>
                                         @endforeach
                                     </select>
-                                </div>
+                                </div> --}}
 
                                 <!-- Отображение шагов и этапов для выбранного поля -->
                                 <div id="field_steps_stages">

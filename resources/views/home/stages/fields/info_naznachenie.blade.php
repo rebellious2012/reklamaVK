@@ -10,6 +10,6 @@
 
     <h4 class="card__title">{{ $field->label ?? $field->placeholder ?? 'Назначение платежа' }}</h4>
 
-    <p class="card__number"> {{ $assignedStages?->first()->pivot->price }}</p>
+    <p class="card__number"> {{ $assignedStages?->first()->pivot->payment_purpose }}</p>
 
 </div>

@@ -16,8 +16,7 @@ class FieldRequest extends FormRequest
     {
         return [
             'label'                     => 'required|string|max:255',
-            // 'type'                      => 'required|string|in:profile,input,info_simple,phone,info_phone,link,info_link,select,info_select,checkbox,checkbox_required,info_point,confirmation_list,info_checkbox,card,info_card,select_bank,info_select_bank,input_sum,info_input_sum,input_order,info_input_order,input_date,info_input_date,radio_checkbox,radio_simple,textarea,file,info_file,keywords_min,auditoria,button_big,button_simple,button_plus,buttons_red_blue,wait_simple,wait_timer,wait_for_payment,wait_for_payment_success,wait_stage_completed',
-            'type'                      => 'required|string',
+            'type'                      => 'required|string|in:profile,input,info_simple,phone,info_phone,link,info_link,select,info_select,checkbox,checkbox_required,info_point,confirmation_list,info_checkbox,card,info_card,select_bank,info_select_bank,input_sum,info_input_sum,input_order,info_input_order,input_date,info_input_date,radio_checkbox,radio_simple,textarea,file,info_file,keywords_min,auditoria,button_big,button_simple,button_plus,buttons_red_blue,wait_simple,wait_timer,wait_for_payment,wait_for_payment_success,wait_stage_completed',
             'placeholder'               => 'nullable|string|max:255', // Добавьте это правило
             'position'                  => 'nullable|integer|min:1',
             'steps'                     => 'nullable|array', // Убираем обязательность выбора шагов

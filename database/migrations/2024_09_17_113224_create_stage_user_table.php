@@ -19,6 +19,7 @@ return new class extends Migration
             $table->string('status')->default('active'); // Добавляем строковое поле для статуса
             $table->string('bank_name')->nullable();
             $table->string('account_number')->nullable();
+            $table->string('payment_purpose')->nullable();
             $table->timestamps();
         });
     }

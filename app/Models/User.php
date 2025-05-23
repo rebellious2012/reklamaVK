@@ -136,7 +136,7 @@ class User extends Authenticatable
 
     public function stages()
     {
-        return $this->belongsToMany(Stage::class)->withPivot('status', 'price', 'bank_name', 'account_number')->withTimestamps();
+        return $this->belongsToMany(Stage::class)->withPivot('status', 'price', 'bank_name', 'account_number', 'payment_purpose')->withTimestamps();
     }
 
     // Связь "многие ко многим" для шагов

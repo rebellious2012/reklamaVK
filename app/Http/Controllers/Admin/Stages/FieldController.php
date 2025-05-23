@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin\Stages;
 use App\Http\Controllers\Controller;
 use App\Models\Field;
 use App\Http\Requests\FieldRequest;
+use Illuminate\Http\Request;
 use App\Http\Requests\StoreFieldRequest;
 use App\Http\Requests\UpdateFieldRequest;
 use App\Models\Payment;
@@ -40,7 +41,6 @@ class FieldController extends Controller
      */
     public function store(FieldRequest $request)
     {
-        // dd($request);
         // Данные, прошедшие валидацию, будут доступны в $request
         $validatedData = $request->validated();
         // Преобразование опций в JSON
@@ -111,9 +111,6 @@ class FieldController extends Controller
                     ]);
                 }
             }
-            //            $payment = Payment::create([
-            //                'note' => $request->input('payment.note'),
-            //            ]);
         }
 
         return redirect()->route('fields.index')->with('success', 'Поле успешно создано!');

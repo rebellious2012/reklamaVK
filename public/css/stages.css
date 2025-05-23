@@ -307,13 +307,14 @@
     -ms-flex: 0 0 100px;
     flex: 0 0 100px;
   }
-  .payment__timer__time {
+  .payment__timer__time, .ticket__download__label::before, .ticket-info input {
     position: absolute;
     top: 50%;
     left: 50%;
     -webkit-transform: translate(-50%, -50%);
-    -ms-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+    z-index: 3;
   }
   .payment__timer__icon-wrapper {
     position: relative;
@@ -483,7 +484,14 @@
   .ticket__download__label:hover {
     border: 1px solid #ddd;
   }
-
+  .upload-status {
+    margin-top: 10px;
+    font-size: 14px;
+   display: none;
+}
+.upload-status.visible {
+    display: block; /* Показывать, если добавлен класс visible */
+}
   @media (max-width: 546px) {
     .stages-content {
       flex-direction: column;

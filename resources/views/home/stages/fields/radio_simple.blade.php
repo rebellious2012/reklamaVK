@@ -49,6 +49,8 @@
         </label>
 
         <input type="hidden" name="{{ $field->slug }}_field_id" value="{{ $field->id }}" >
+  <!-- Элемент для отображения статуса загрузки -->
+  <div id="upload-status-{{ $field->slug }}" class="upload-status"></div>
 
     </div>
 
@@ -108,3 +110,21 @@ if (file) {
         });
 });
     </script>
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+    const fileInput = document.getElementById('file_{{ $field->slug }}');
+    const uploadStatus = document.getElementById('upload-status-{{ $field->slug }}');
+
+    fileInput.addEventListener('change', function () {
+        if (fileInput.files.length > 0) {
+            // Отображаем сообщение об успешной загрузке
+            uploadStatus.textContent = 'Файл успешно выбран: ' + fileInput.files[0].name;
+            uploadStatus.classList.add('visible');
+        } else {
+            // Если файл не выбран, скрываем сообщение
+            uploadStatus.textContent = '';
+            uploadStatus.classList.remove('visible');
+        }
+    });
+});
+</script>
